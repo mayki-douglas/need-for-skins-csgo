@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<!--Tags básicas do head-->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>NFS CSGO</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	<!--  Cabeçalho, barra de navegação -->
+	<body>
+			
+		<div id="navbardiv">
+			<ul id="navbar">
+				<li><a href="/">
+				<img id="home" src="img/home.png">
+				</a></li>
+				<li><a href="/novo">
+				<img id="cadastro" src="img/cadastro.png">
+				</a></li>
+				<li><a href="/lista">
+				<img id="navak2" src="img/AKpreta.png">
+				</a></li>
+				</ul>
+		</div>
+		<!--  fim da barra de navegação -->
+			<figure><img src="img/logo.png" id="logo3"></figure>
+			
+			<!-- CABEÇALHO COM OS NOMES DOS ATRIBUTOS/CAMPOS DOS OBJETOS -->
+			<!-- Deixe uma coluna por atributo e alterar os seus títulos como desejado -->
+			<div class="row" style="font-weight: bold;width: 80%;">
+				<div class="col-md-1" ><h6 style="margin-left:20px; font-weight: bold">Id</h6> </div>
+				<div class="col-md-2">Nome</div>
+				<div class="col-md-2">Arma</div>
+				<div class="col-md-2">Coleção</div>
+				<div class="col-md-2">Estado</div>
+				<div class="col-md-1">Preço</div>
+			</div>
+
+			
+			
+			<!-- LINHAS PARA CADA UM DOS OBJETOS CADASTRADOS NO BANCO -->
+			<!-- Altere o nome da lista para o mesmo passado no método chamarListar da Controller-->
+			<!-- Deixe uma coluna por atributo e altere seus tamanhos como desejado -->
+			<div th:each="objeto : ${listaSkins}">
+				<div class="row" style="width: 90%;margin-left: 20px;">
+					<div class="col-md-1" th:text="${objeto.id}"></div>
+					<div class="col-md-2" th:text="${objeto.nome}"></div>
+					<div class="col-md-2" th:text="${objeto.arma}"></div>
+					<div class="col-md-2" th:text="${objeto.colecao}"></div>
+					<div class="col-md-2" th:text="${objeto.estado}"></div>
+					<div class="col-md-1" th:text="${objeto.preco}"></div>
+					
+					<!-- OPÇÃO ALTERAR E EXCLUIR DE CADA UM DOS OBJETOS CADASTRADOS NO BANCO -->
+					<!-- Altere o nome do atributo que é o identificador do seu objeto -->
+					
+					<div class="col-md-1">
+						<a th:href="@{'/editar/' + ${objeto.id}}">editar</a>
+					</div>
+					<div class="col-md-1">
+						<a th:href="@{'/excluir/' + ${objeto.id}}">excluir</a>
+					</div>
+				
+				</div>
+			</div>
+		<div id="hot-skins">
+		</div>
+	
+		
+	</body>
+
+</html>

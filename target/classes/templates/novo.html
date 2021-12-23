@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<!--Tags básicas do head-->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Incluir</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script src="js/scripts.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</head>
+	
+	<body>
+				
+		<div id="navbardiv">
+			<ul id="navbar">
+				<li><a href="/">
+				<img id="home" src="img/home.png">
+				</a></li>
+				<li><a href="/novo">
+				<img id="cadastro" src="img/cadastro.png">
+				</a></li>
+				<li><a href="/lista">
+				<img id="navak2" src="img/AKpreta.png">
+				</a></li>
+				</ul>
+		</div>
+		<div class="container">
+			
+			<!-- CABEÇALHO COM O TÍTULO IDENTIFICANDO QUE SE TRATA DA PÁGINA DE NOVO -->
+			<div class="row">
+				<div class="col-md-12">
+					<h1>INCLUIR NOVA SKIN</h1>
+				</div>
+			</div>
+			<figure><img id="logo2" src="img/logo.png" alt="" style="margin-left: 200px;"></figure>
+			<!-- FORMULÁRIO COM OS CAMPOS PARA EDIÇÃO DO CLIENTE -->
+			<form action="#" th:action="@{/salvar}" th:object="${skins}" method="post">
+				
+				<!-- CAMPOS DO OBJETO -->
+				
+				<!-- Edite o título e o nome do atributo identificador do seu objeto na primeira row -->
+				<div class="row">
+					<div class="col-md-1">Id</div>
+					<div class="col-md-5"><input type="text" th:field="*{id}" readonly="readonly"></div>
+				</div>
+				
+				<!-- Deixe uma row por atributo e altere seu título e o seu nome -->
+				<div class="row">
+					<div class="col-md-1">Nome</div>
+					<div class="col-md-5"><input type="text" th:field="*{nome}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">Arma</div>
+					<div class="col-md-5"><input type="text" th:field="*{arma}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">Coleção</div>
+					<div class="col-md-5"><input type="text" th:field="*{colecao}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">Estado</div>
+					<div class="col-md-5"><input type="text" th:field="*{estado}"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-1">Preço</div>
+					<div class="col-md-5"><input type="text" th:field="*{preco}"></div>
+				</div>
+				<!-- BOTÃO DE SUBMIT QUE CHAMARÁ O SALVAMENTO -->
+				<div class="row">
+					<div class="col-md-1"><button type="submit">Salvar</button></div>
+				</div>
+			
+			</form>
+			
+		</div>
+		
+	</body>
+
+</html>
