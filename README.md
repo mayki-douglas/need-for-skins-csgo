@@ -6,10 +6,12 @@ Projeto de Site de loja de Skins para o jogo *Counter Strike Global Offensive*, 
 
 Tecnologias usadas:
 
-*Java (back-end)*<br>
-*Spring (framework)*<br>
-*Javascript (front-end)*<br>
-*MySQL (banco de dados)*<br>
+<div style="display: inline_block">
+    <img align="center" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg">
+    <img align="center" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" />
+    <img align="center" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+    <img align="center" height="50" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg">
+</div>
 
 ## Detalhes sobre o Projeto
 
